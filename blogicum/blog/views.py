@@ -46,10 +46,12 @@ posts = [
 
 posts_id = [post['id'] for post in posts]
 
+
 def index(request):
     template = 'blog/index.html'
     context = {'posts': posts}
     return render(request, template, context)
+
 
 def post_detail(request, id):
     template = 'blog/detail.html'
@@ -57,6 +59,7 @@ def post_detail(request, id):
         raise Http404('Пост не найден')
     context = {'post': posts[id]}
     return render(request, template, context)
+
 
 def category_posts(request, category_slug):
     template = 'blog/category.html'
