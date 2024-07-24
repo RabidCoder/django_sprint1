@@ -2,11 +2,7 @@
 {% block title %}{{ post.location }}. {{ post.date }}{% endblock  %}
 {% block content %}
   <article>
-    <ul>
-      <li>Место: {{ post.location }}</li>
-      <li>Дата: {{ post.date }}</li>
-      <li>Категория: {{ post.category }}</li>
-    </ul>
-    <p>{{ post.text|linebreaksbr }}</p>
+    {% include 'blog/includes/card.html' %}
+    <p>{{ post.text|linebreaksbr }}</p>    
   </article>
 {% endblock  %}
